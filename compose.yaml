@@ -1,9 +1,10 @@
 services:
   app:
-    build: ./app
+    build:
+      context: .
     ports:
-      - "8080:80"
-    volumes:
-      - ./app:/var/www/html
+      - "127.0.0.1:8080:80"
     env_file:
       - .env
+    volumes:
+      - ./app:/app/public

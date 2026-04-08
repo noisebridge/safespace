@@ -1,0 +1,15 @@
+# Default Caddyfile for local development.
+# At deploy time, the infrastructure repo bind-mounts its own Caddyfile over
+# this at /etc/caddy/Caddyfile to add the public hostname, TLS, logging, and
+# security headers.
+{
+	# Local dev: no automatic HTTPS. Production Caddyfile (in infra repo)
+	# enables TLS via the hostname block.
+	auto_https off
+}
+
+:80 {
+	root * /app/public
+	php_server
+	file_server
+}

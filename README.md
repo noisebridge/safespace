@@ -13,7 +13,7 @@ cp .env.example .env
 Start the app:
 
 ```sh
-docker compose up
+docker compose up --build
 ```
 
 The app will be available at `http://localhost:8080`. Changes to `app/index.php` are reflected immediately without restarting.
