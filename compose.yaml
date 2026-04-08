@@ -1,9 +1,11 @@
 services:
   app:
-    build: ./app
-    ports:
-      - "8080:80"
-    volumes:
-      - ./app:/var/www/html
+    build:
+      context: .
+    command: php -S 0.0.0.0:9000 -t /var/www/html
     env_file:
       - .env
+    ports:
+      - 8080:9000
+    volumes:
+      - ./app:/var/www/html
